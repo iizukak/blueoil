@@ -41,6 +41,11 @@ _NETWORK_NAME_NETWORK_MODULE_CLASS = {
         "network_module": "lm_fyolo",
         "network_class": "LMFYoloQuantize",
     },
+    "TinyNetQuantize": {
+        "network_module": "tinynet",
+        "network_class": "TinyNetQuantize",
+    },
+
 }
 
 _DATASET_FORMAT_DATASET_MODULE_CLASS = {
