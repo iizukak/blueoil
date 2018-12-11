@@ -40,22 +40,16 @@ class TinyNet(Base):
 
         x = tf.layers.conv2d(name="conv1",
                              inputs=images,
-                             filters=self.num_classes,
-                             kernel_size=1,
+                             filters=16,
+                             kernel_size=3,
                              activation=self.activation,
                              use_bias=False,
                              data_format=channels_data_format)
 
-        x = tf.layers.max_pooling2d(name="pool1",
-                                    inputs=x,
-                                    pool_size=(2,2),
-                                    strides=(2,2),
-                                    data_format=channels_data_format)
-
         x = tf.layers.conv2d(name="conv2",
                              inputs=x,
-                             filters=self.num_classes,
-                             kernel_size=1,
+                             filters=32,
+                             kernel_size=3,
                              activation=self.activation,
                              use_bias=False,
                              data_format=channels_data_format)
@@ -68,17 +62,20 @@ class TinyNet(Base):
 
         x = tf.layers.conv2d(name="conv3",
                              inputs=x,
-                             filters=self.num_classes,
-                             kernel_size=1,
+                             filters=64,
+                             kernel_size=3,
                              activation=self.activation,
                              use_bias=False,
                              data_format=channels_data_format)
 
-        x = tf.layers.max_pooling2d(name="pool3",
-                                    inputs=x,
-                                    pool_size=(2,2),
-                                    strides=(2,2),
-                                    data_format=channels_data_format)
+        four_letter_data_format = 'NHWC' if channels_data_format == 'channels_last' else 'NCHW'
+        x = tf.contrib.layers.batch_norm(x,
+                                         decay=0.99,
+                                         scale=True,
+                                         center=True,
+                                         updates_collections=None,
+                                         is_training=is_training,
+                                         data_format=four_letter_data_format)
 
         x = tf.layers.dropout(x, training=is_training)
 
