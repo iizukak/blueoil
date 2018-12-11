@@ -8,7 +8,7 @@ from lmnet.networks.classification.base import Base
 class TinyNet(Base):
     """
     This network is only for Tutorial, Not for Production.
-    TinyNet contains 3 (CONV+POOL) layers.
+    TinyNet contains 4 (CONV+POOL) layers.
     """
     version = 0.1
 
@@ -53,7 +53,7 @@ class TinyNet(Base):
                                     data_format=channels_data_format)
 
         x = tf.layers.conv2d(name="conv2",
-                             inputs=images,
+                             inputs=x,
                              filters=self.num_classes,
                              kernel_size=1,
                              activation=self.activation,
@@ -66,10 +66,24 @@ class TinyNet(Base):
                                     strides=(2,2),
                                     data_format=channels_data_format)
 
+        x = tf.layers.conv2d(name="conv3",
+                             inputs=x,
+                             filters=self.num_classes,
+                             kernel_size=1,
+                             activation=self.activation,
+                             use_bias=False,
+                             data_format=channels_data_format)
+
+        x = tf.layers.max_pooling2d(name="pool3",
+                                    inputs=x,
+                                    pool_size=(2,2),
+                                    strides=(2,2),
+                                    data_format=channels_data_format)
+
         x = tf.layers.dropout(x, training=is_training)
 
         kernel_initializer = tf.random_normal_initializer(mean=0.0, stddev=0.01)
-        x = tf.layers.conv2d(name='conv3',
+        x = tf.layers.conv2d(name='conv4',
                              inputs=x,
                              filters=self.num_classes,
                              kernel_size=1,
@@ -82,7 +96,7 @@ class TinyNet(Base):
 
         h = x.get_shape()[1].value if self.data_format == 'NHWC' else x.get_shape()[2].value
         w = x.get_shape()[2].value if self.data_format == 'NHWC' else x.get_shape()[3].value
-        x = tf.layers.average_pooling2d(name='pool3',
+        x = tf.layers.average_pooling2d(name='pool4',
                                         inputs=x,
                                         pool_size=[h, w],
                                         padding='VALID',
