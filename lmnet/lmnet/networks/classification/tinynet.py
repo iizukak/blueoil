@@ -54,11 +54,9 @@ class TinyNet(Base):
                              use_bias=False,
                              data_format=channels_data_format)
 
-        x = tf.layers.max_pooling2d(name="pool2",
-                                    inputs=x,
-                                    pool_size=(2,2),
-                                    strides=(2,2),
-                                    data_format=channels_data_format)
+        if self.data_format != 'NHWC':
+            x = tf.transpose(x, perm=[self.data_format.find(d) for d in 'NHWC'])
+        x = tf.space_to_depth(x, block_size=2, name="space_to_depth")
 
         x = tf.layers.conv2d(name="conv3",
                              inputs=x,
@@ -93,7 +91,7 @@ class TinyNet(Base):
 
         h = x.get_shape()[1].value if self.data_format == 'NHWC' else x.get_shape()[2].value
         w = x.get_shape()[2].value if self.data_format == 'NHWC' else x.get_shape()[3].value
-        x = tf.layers.average_pooling2d(name='pool4',
+        x = tf.layers.average_pooling2d(name='pool2',
                                         inputs=x,
                                         pool_size=[h, w],
                                         padding='VALID',
@@ -104,18 +102,8 @@ class TinyNet(Base):
 
         return self.base_output
 
+
 class TinyNetQuantize(TinyNet):
-    """Lmnet quantize network for classification, version 1.0
-
-    Following `args` are used for inference: ``activation_quantizer``, ``activation_quantizer_kwargs``,
-    ``weight_quantizer``, ``weight_quantizer_kwargs``.
-
-    Args:
-        activation_quantizer (callable): Weight quantizater. See more at `lmnet.quantizations`.
-        activation_quantizer_kwargs (dict): Kwargs for `activation_quantizer`.
-        weight_quantizer (callable): Activation quantizater. See more at `lmnet.quantizations`.
-        weight_quantizer_kwargs (dict): Kwargs for `weight_quantizer`.
-    """
     version = 1.0
 
     def __init__(
