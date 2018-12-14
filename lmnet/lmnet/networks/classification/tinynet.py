@@ -37,43 +37,64 @@ class TinyNet(Base):
 
         channels_data_format = 'channels_last' if self.data_format == 'NHWC' else 'channels_first'
         self.images = images
+        with tf.variable_scope("quantize_conv", custom_getter=self.custom_getter):
+            x = tf.layers.conv2d(name="conv1",
+                                 inputs=images,
+                                 filters=16,
+                                 kernel_size=3,
+                                 activation=None,
+                                 use_bias=False,
+                                 data_format=channels_data_format)
 
-        x = tf.layers.conv2d(name="conv1",
-                             inputs=images,
-                             filters=16,
-                             kernel_size=3,
-                             activation=self.activation,
-                             use_bias=False,
-                             data_format=channels_data_format)
+            four_letter_data_format = 'NHWC' if channels_data_format == 'channels_last' else 'NCHW'
+            x = tf.contrib.layers.batch_norm(x,
+                                             decay=0.99,
+                                             scale=True,
+                                             center=True,
+                                             updates_collections=None,
+                                             is_training=is_training,
+                                             data_format=four_letter_data_format)
+            x = self.activation(x)
 
-        x = tf.layers.conv2d(name="conv2",
-                             inputs=x,
-                             filters=32,
-                             kernel_size=3,
-                             activation=self.activation,
-                             use_bias=False,
-                             data_format=channels_data_format)
+        with tf.variable_scope("quantize_conv2", custom_getter=self.custom_getter):
+            x = tf.layers.conv2d(name="conv2",
+                                 inputs=x,
+                                 filters=32,
+                                 kernel_size=3,
+                                 use_bias=False,
+                                 data_format=channels_data_format)
 
-        if self.data_format != 'NHWC':
-            x = tf.transpose(x, perm=[self.data_format.find(d) for d in 'NHWC'])
-        x = tf.space_to_depth(x, block_size=2, name="space_to_depth")
+            four_letter_data_format = 'NHWC' if channels_data_format == 'channels_last' else 'NCHW'
+            x = tf.contrib.layers.batch_norm(x,
+                                             decay=0.99,
+                                             scale=True,
+                                             center=True,
+                                             updates_collections=None,
+                                             is_training=is_training,
+                                             data_format=four_letter_data_format)
+            x = self.activation(x)
 
-        x = tf.layers.conv2d(name="conv3",
-                             inputs=x,
-                             filters=64,
-                             kernel_size=3,
-                             activation=self.activation,
-                             use_bias=False,
-                             data_format=channels_data_format)
+            if self.data_format != 'NHWC':
+                x = tf.transpose(x, perm=[self.data_format.find(d) for d in 'NHWC'])
+            x = tf.space_to_depth(x, block_size=2, name="space_to_depth")
 
-        four_letter_data_format = 'NHWC' if channels_data_format == 'channels_last' else 'NCHW'
-        x = tf.contrib.layers.batch_norm(x,
-                                         decay=0.99,
-                                         scale=True,
-                                         center=True,
-                                         updates_collections=None,
-                                         is_training=is_training,
-                                         data_format=four_letter_data_format)
+        with tf.variable_scope("quantize_conv3", custom_getter=self.custom_getter):
+            x = tf.layers.conv2d(name="conv3",
+                                 inputs=x,
+                                 filters=64,
+                                 kernel_size=3,
+                                 use_bias=False,
+                                 data_format=channels_data_format)
+
+            four_letter_data_format = 'NHWC' if channels_data_format == 'channels_last' else 'NCHW'
+            x = tf.contrib.layers.batch_norm(x,
+                                             decay=0.99,
+                                             scale=True,
+                                             center=True,
+                                             updates_collections=None,
+                                             is_training=is_training,
+                                             data_format=four_letter_data_format)
+            x = self.activation(x)
 
         x = tf.layers.dropout(x, training=is_training)
 
