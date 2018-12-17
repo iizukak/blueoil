@@ -8,7 +8,7 @@ from lmnet.networks.classification.base import Base
 class TinyNet(Base):
     """
     This network is only for Tutorial, Not for Production.
-    TinyNet contains 4 (CONV+POOL) layers.
+    TinyNet contains 5 CONV layers and 2 POOL layers.
     """
     version = 0.1
 
