@@ -15,6 +15,9 @@ fi
 TEST_LOG_NO=0
 FAILED_TEST_NO=""
 
+# list of avairable optimizers listed in blueoil_init.py
+OPTIMIZSERS=("MomentumOptimizer" "GradientDescentOptimizer" "AdamOptimizer")
+
 function usage_exit(){
 	echo ""
 	echo "Usage"
@@ -89,12 +92,11 @@ function init_test(){
     NETWORK_NUMBER=$4
     DATASET_FORMAT_NUMBER=$5
     ENABLE_DATA_AUGMENTATION=$6
-    TRAINING_DATASET_PATH=$7
-    VALIDATION_DATASET_PATH=$8
+    OPTIMIZER_NUMBER=$7
+    TRAINING_DATASET_PATH=$8
+    VALIDATION_DATASET_PATH=$9
     CONFIG_NAME=${TEST_CONFIG_PREFIX}_${TEST_CASE}
     TEST_YML_CONFIG_FILE=./tests/config/${TEST_CASE}.yml
-    echo "## Test of ${TEST_CASE}"
-    echo "### ${RUN_SCRIPT} init"
     if [ "${VALIDATION_DATASET_PATH}" == "" ]; then
         SET_VALIDATION_PATH="2"
         EXPECT_VALIDATION=""
@@ -224,6 +226,7 @@ trap 'show_error_log; clean_exit 1' 1 2 3 15
 
 if [ "${YML_CONFIG_FILE}" == "" ]; then
     ADDITIONAL_TEST_FLAG=0
+    TEST_CASE_NUMBER=0
     TASK_TYPE_NUMBER=1
     ENABLE_DATA_AUGMENTATION="y"
     for TASK_TYPE in "classification" "object_detection"
@@ -235,13 +238,15 @@ if [ "${YML_CONFIG_FILE}" == "" ]; then
             do
                 TRAINING_DATASET_PATH=$(get_yaml_param train_path tests/config/${TEST_CASE}.yml)
                 VALIDATION_DATASET_PATH=$(get_yaml_param test_path tests/config/${TEST_CASE}.yml)
-                init_test ${TEST_CASE} ${TASK_TYPE_NUMBER} 1 1 ${DATASET_FORMAT_NUMBER} ${ENABLE_DATA_AUGMENTATION} ${TRAINING_DATASET_PATH} ${VALIDATION_DATASET_PATH}
+                OPTIMIZER_NUMBER=$(($((${TEST_CASE_NUMBER} % ${#OPTIMIZSERS[@]}))+1))
+                init_test ${TEST_CASE} ${TASK_TYPE_NUMBER} 1 1 ${DATASET_FORMAT_NUMBER} ${ENABLE_DATA_AUGMENTATION} ${OPTIMIZER_NUMBER} ${TRAINING_DATASET_PATH} ${VALIDATION_DATASET_PATH}
                 basic_test
                 if [ ${ADDITIONAL_TEST_FLAG} -eq 0 ]; then
                     # Run additional test only once
                     additional_test
                     ADDITIONAL_TEST_FLAG=1
                 fi
+                TEST_CASE_NUMBER=$((TEST_CASE_NUMBER+1))
             done
             DATASET_FORMAT_NUMBER=$((DATASET_FORMAT_NUMBER+1))
         done

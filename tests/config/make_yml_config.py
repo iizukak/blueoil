@@ -112,13 +112,13 @@ trainer_optimizer_comment = """\
 
 trainer_optimizers = [
     '  optimizer: MomentumOptimizer\n',
+    '  optimizer: GradientDescentOptimizer\n',
+    '  optimizer: AdamOptimizer\n',
     '  optimizer: MomentumOptimizer\n',
+    '  optimizer: GradientDescentOptimizer\n',
+    '  optimizer: AdamOptimizer\n',
     '  optimizer: MomentumOptimizer\n',
-    '  optimizer: MomentumOptimizer\n',
-    '  optimizer: MomentumOptimizer\n',
-    '  optimizer: MomentumOptimizer\n',
-    '  optimizer: MomentumOptimizer\n',
-    '  optimizer: MomentumOptimizer\n',
+    '  optimizer: GradientDescentOptimizer\n',
 ]
 
 trainer_lr_schedule_comment = """\
