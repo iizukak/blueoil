@@ -16,24 +16,24 @@
 from easydict import EasyDict
 import tensorflow as tf
 
-from lmnet.common import Tasks
-from lmnet.networks.object_detection.{{network_module}} import {{network_class}}
-from lmnet.datasets.{{dataset_module}} import {{dataset_class}}
-{% if data_augmentation %}from lmnet.data_augmentor import ({% for augmentor in data_augmentation %}
+from lmnet.lmnet.common import Tasks
+from lmnet.lmnet.networks.object_detection.{{network_module}} import {{network_class}}
+from lmnet.lmnet.datasets.{{dataset_module}} import {{dataset_class}}
+{% if data_augmentation %}from lmnet.lmnet.data_augmentor import ({% for augmentor in data_augmentation %}
     {{ augmentor[0] }},{% endfor %}
 ){% endif %}
-from lmnet.data_processor import Sequence
-from lmnet.pre_processor import (
+from lmnet.lmnet.data_processor import Sequence
+from lmnet.lmnet.pre_processor import (
     ResizeWithGtBoxes,
     DivideBy255,
     PerImageStandardization,
 )
-from lmnet.post_processor import (
+from lmnet.lmnet.post_processor import (
     FormatYoloV2,
     ExcludeLowScoreBox,
     NMS,
 )
-from lmnet.quantizations import (
+from lmnet.lmnet.quantizations import (
     binary_channel_wise_mean_scaling_quantizer,
     linear_mid_tread_half_quantizer,
 )

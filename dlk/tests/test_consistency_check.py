@@ -13,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # =============================================================================
-"""Test file for consistency checking in core.operators"""
+"""Test file for consistency checking in dlk.python.dlk.core.operators"""
 import importlib
 import unittest
 from typing import List, cast
 
 import numpy as np
 
-from core.data_types import Float32
-from core.operators import Add, Constant, Conv, Input, MaxPool, Operator
+from dlk.python.dlk.core.data_types import Float32
+from dlk.python.dlk.core.operators import Add, Constant, Conv, Input, MaxPool, Operator
 
 
 class TestConsistencyCheck(unittest.TestCase):

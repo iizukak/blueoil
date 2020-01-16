@@ -17,8 +17,8 @@ import functools
 
 import tensorflow as tf
 
-from lmnet.blocks import lmnet_block
-from lmnet.networks.segmentation.base import SegnetBase
+from lmnet.lmnet.blocks import lmnet_block
+from lmnet.lmnet.networks.segmentation.base import SegnetBase
 
 
 class LmSegnetV1(SegnetBase):
@@ -99,10 +99,10 @@ class LmSegnetV1Quantize(LmSegnetV1):
 
     Args:
         activation_quantizer (callable): Weight quantizater.
-            See more at `lmnet.quantizations`.
+            See more at `lmnet.lmnet.quantizations`.
         activation_quantizer_kwargs (dict): Kwargs for `activation_quantizer`.
         weight_quantizer (callable): Activation quantizater.
-            See more at `lmnet.quantizations`.
+            See more at `lmnet.lmnet.quantizations`.
         weight_quantizer_kwargs (dict): Kwargs for `weight_quantizer`.
 
     """

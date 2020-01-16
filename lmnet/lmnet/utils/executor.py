@@ -18,7 +18,7 @@ import os
 import tensorflow as tf
 from tensorflow.io import gfile
 
-from lmnet import environment
+from lmnet.lmnet import environment
 
 
 def init_logging(config):

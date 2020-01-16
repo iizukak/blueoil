@@ -16,9 +16,9 @@
 import numpy as np
 import tensorflow as tf
 
-from lmnet.layers import conv2d, fully_connected, max_pooling2d
-from lmnet.metrics.mean_average_precision import average_precision, tp_fp_in_the_image
-from lmnet.networks.base import BaseNetwork
+from lmnet.lmnet.layers import conv2d, fully_connected, max_pooling2d
+from lmnet.lmnet.metrics.mean_average_precision import average_precision, tp_fp_in_the_image
+from lmnet.lmnet.networks.base import BaseNetwork
 
 
 class YoloV1(BaseNetwork):
@@ -265,7 +265,7 @@ class YoloV1(BaseNetwork):
 
         Args:
         output: Tensor of inference() outputs.
-        threshold: threshold of predict score.
+        threshold: threshold of predict sdlk.python.dlk.core
 
         Retrun:
             python list of predict_boxes Tensor.
@@ -282,7 +282,7 @@ class YoloV1(BaseNetwork):
         predict_classes: [batch_size, cell_size, cell_size, num_classes]
         predict_confidence: [batch_size, cell_size, cell_size, boxes_per_cell]
         predict_boxes: [batch_size, cell_size, cell_size, boxes_per_cell, 4(center_x, center_y, w, h)]
-        threshold: threshold of predict score.
+        threshold: threshold of predict sdlk.python.dlk.core
 
         Return: python list of predict_boxes Tensor.
         predict_boxes shape is [num_predicted_boxes, 6(x, y, w, h, class_id, probability)].
@@ -392,7 +392,7 @@ class YoloV1(BaseNetwork):
         predict_classes: [batch_size, cell_size, cell_size, num_classes]
         predict_confidence: [batch_size, cell_size, cell_size, boxes_per_cell]
         predict_boxes: [batch_size, cell_size, cell_size, boxes_per_cell, 4(center_x, center_y, w, h)]
-        threshold: threshold of predict score.
+        threshold: threshold of predict sdlk.python.dlk.core
         """
         predict_boxes = self.convert_boxes_space_from_yolo_to_real(predict_boxes)
 

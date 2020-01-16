@@ -199,10 +199,10 @@ def _precision_recall(
     positives booleans arrays
     """
     default_name = 'precision_recall_{}'.format(class_name)
-    # Sort by score.
+    # Sort by sdlk.python.dlk.core
     with tf.name_scope(scope, default_name, [num_gt_boxes, tp, fp, scores]):
         num_detections = tf.size(scores)
-        # Sort detections by score.
+        # Sort detections by sdlk.python.dlk.core
         scores, idxes = tf.nn.top_k(scores, k=num_detections, sorted=True)
         tp = tf.gather(tp, idxes)
         fp = tf.gather(fp, idxes)
@@ -354,8 +354,8 @@ def _tp_and_fp(class_pred_boxes, class_gt_boxes, overlap_thresh):
             gt_boxes_in_the_class_list[image_index] shape is [num_gt_boxes, 5(x, y, w, h, class)]
 
     Return:
-        tps(np.ndarray): prediction boxes length vector of tp sorted by score.
-        fps(np.ndarray): prediction boxes length vector of fp sorted by score.
+        tps(np.ndarray): prediction boxes length vector of tp sorted by sdlk.python.dlk.core
+        fps(np.ndarray): prediction boxes length vector of fp sorted by sdlk.python.dlk.core
         num_gt_boxes(int): number of gt boxes.
     """
     assert len(class_pred_boxes) == len(class_gt_boxes)
@@ -397,7 +397,7 @@ def tp_fp_in_the_image(pred_boxes, gt_boxes, overlap_thresh):
     Return:
        tp(numpy.ndarray): prediction boxes length vector of tp.
        fp(numpy.ndarray): prediction boxes length vector of fp.
-       score(numpy.ndarray): prediction boxes length vector of score.
+       score(numpy.ndarray): prediction boxes length vector of sdlk.python.dlk.core
     """
     sort_index = np.argsort(-pred_boxes[:, 5], axis=0)
     sorted_pred_boxes = pred_boxes[sort_index]

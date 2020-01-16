@@ -19,8 +19,8 @@ from typing import Dict
 
 import numpy as np
 
-from core.data_types import Float32
-from core.operators import Constant, Conv, Input, MaxPool, Operator
+from dlk.python.dlk.core.data_types import Float32
+from dlk.python.dlk.core.operators import Constant, Conv, Input, MaxPool, Operator
 
 
 class TestOperators(unittest.TestCase):

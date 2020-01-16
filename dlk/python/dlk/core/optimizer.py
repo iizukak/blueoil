@@ -21,11 +21,11 @@ from typing import Any, List, cast
 
 import numpy as np
 
-from core.data_types import QUANTIZED_NOT_PACKED, QUANTIZED_PACKED, QUANTIZED_PACKED_KERNEL, Int32, PackedUint32, Uint32
-from core.graph import Graph
-from core.graph_pattern_matching import get_nodes_in_branch, sort_graph
-from core.operators import Constant, Conv, Lookup, Operator, BatchNormalizationOptimized
-from modules.packer import Packer
+from dlk.python.dlk.core.data_types import QUANTIZED_NOT_PACKED, QUANTIZED_PACKED, QUANTIZED_PACKED_KERNEL, Int32, PackedUint32, Uint32
+from dlk.python.dlk.core.graph import Graph
+from dlk.python.dlk.core.graph_pattern_matching import get_nodes_in_branch, sort_graph
+from dlk.python.dlk.core.operators import Constant, Conv, Lookup, Operator, BatchNormalizationOptimized
+from dlk.python.dlk.modules.packer import Packer
 
 
 def pass_remove_identities(graph: Graph) -> None:

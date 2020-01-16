@@ -21,7 +21,7 @@ import PIL.Image
 import PIL.ImageDraw
 import PIL.ImageFont
 
-from lmnet.common import get_color_map
+from lmnet.lmnet.common import get_color_map
 
 FONT = "DejaVuSans.ttf"
 

@@ -16,20 +16,20 @@
 from easydict import EasyDict
 import tensorflow as tf
 
-from lmnet.common import Tasks
-from lmnet.networks.classification.lmnet_quantize import LmnetQuantize
-from lmnet.datasets.cifar100 import Cifar100
-from lmnet.data_processor import Sequence
-from lmnet.pre_processor import (
+from lmnet.lmnet.common import Tasks
+from lmnet.lmnet.networks.classification.lmnet_quantize import LmnetQuantize
+from lmnet.lmnet.datasets.cifar100 import Cifar100
+from lmnet.lmnet.data_processor import Sequence
+from lmnet.lmnet.pre_processor import (
     Resize,
     DivideBy255,
 )
-from lmnet.data_augmentor import (
+from lmnet.lmnet.data_augmentor import (
     Crop,
     FlipLeftRight,
     Pad,
 )
-from lmnet.quantizations import (
+from lmnet.lmnet.quantizations import (
     binary_mean_scaling_quantizer,
     linear_mid_tread_half_quantizer,
 )

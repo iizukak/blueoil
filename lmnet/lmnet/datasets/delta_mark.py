@@ -20,10 +20,10 @@ import os.path
 import numpy as np
 import pandas as pd
 
-from lmnet import data_processor
-from lmnet.datasets.base import Base, ObjectDetectionBase, StoragePathCustomizable
-from lmnet.utils.image import load_image
-from lmnet.utils.random import shuffle, train_test_split
+from lmnet.lmnet import data_processor
+from lmnet.lmnet.datasets.base import Base, ObjectDetectionBase, StoragePathCustomizable
+from lmnet.lmnet.utils.image import load_image
+from lmnet.lmnet.utils.random import shuffle, train_test_split
 
 
 @functools.lru_cache(maxsize=None)

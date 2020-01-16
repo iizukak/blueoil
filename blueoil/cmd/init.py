@@ -21,8 +21,8 @@ from collections import OrderedDict
 import whaaaaat
 from jinja2 import Environment, FileSystemLoader
 
-import lmnet.data_augmentor as augmentor
-from lmnet.data_processor import Processor
+import lmnet.lmnet.data_augmentor as augmentor
+from lmnet.lmnet.data_processor import Processor
 
 
 task_type_choices = [

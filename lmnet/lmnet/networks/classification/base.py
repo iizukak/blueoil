@@ -16,7 +16,7 @@
 import tensorflow as tf
 from matplotlib import cm
 
-from lmnet.networks.base import BaseNetwork
+from lmnet.lmnet.networks.base import BaseNetwork
 
 
 class Base(BaseNetwork):

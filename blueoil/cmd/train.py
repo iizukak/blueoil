@@ -20,8 +20,8 @@ from tensorflow.io import gfile
 import yaml
 
 from blueoil.generate_lmnet_config import generate
-from executor.train import run as run_train
-from lmnet.utils import horovod as horovod_util
+from lmnet.executor.train import run as run_train
+from lmnet.lmnet.utils import horovod as horovod_util
 
 
 def run(blueoil_config_file, experiment_id):

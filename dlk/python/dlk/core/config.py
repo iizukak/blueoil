@@ -16,8 +16,8 @@
 """Configuration module."""
 import os
 
-import env
-from core.data_types import Uint32
+import dlk.python.dlk.env
+from dlk.python.dlk.core.data_types import Uint32
 
 
 class Config(object):

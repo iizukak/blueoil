@@ -15,8 +15,8 @@
 # =============================================================================
 import tensorflow as tf
 
-from lmnet.common import get_color_map
-from lmnet.networks.base import BaseNetwork
+from lmnet.lmnet.common import get_color_map
+from lmnet.lmnet.networks.base import BaseNetwork
 
 
 class Base(BaseNetwork):

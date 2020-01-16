@@ -21,8 +21,8 @@ import xml.etree.ElementTree as ET
 import numpy as np
 import pandas as pd
 
-from lmnet.utils.image import load_image
-from lmnet.datasets.base import ObjectDetectionBase
+from lmnet.lmnet.utils.image import load_image
+from lmnet.lmnet.datasets.base import ObjectDetectionBase
 
 
 class PascalvocBase(ObjectDetectionBase):

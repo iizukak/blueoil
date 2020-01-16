@@ -16,14 +16,14 @@
 import tensorflow as tf
 from easydict import EasyDict
 
-from lmnet.common import Tasks
-from lmnet.data_augmentor import (Brightness, Color, Contrast, FlipLeftRight,
+from lmnet.lmnet.common import Tasks
+from lmnet.lmnet.data_augmentor import (Brightness, Color, Contrast, FlipLeftRight,
                                   Hue, SSDRandomCrop)
-from lmnet.data_processor import Sequence
-from lmnet.datasets.bdd100k import BDD100KObjectDetection
-from lmnet.networks.object_detection.lm_fyolo import LMFYolo
-from lmnet.post_processor import NMS, ExcludeLowScoreBox, FormatYoloV2
-from lmnet.pre_processor import DivideBy255, ResizeWithGtBoxes
+from lmnet.lmnet.data_processor import Sequence
+from lmnet.lmnet.datasets.bdd100k import BDD100KObjectDetection
+from lmnet.lmnet.networks.object_detection.lm_fyolo import LMFYolo
+from lmnet.lmnet.post_processor import NMS, ExcludeLowScoreBox, FormatYoloV2
+from lmnet.lmnet.pre_processor import DivideBy255, ResizeWithGtBoxes
 
 IS_DEBUG = False
 

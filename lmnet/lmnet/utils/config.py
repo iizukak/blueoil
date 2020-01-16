@@ -22,9 +22,9 @@ from easydict import EasyDict
 from tensorflow.io import gfile
 from yaml.representer import Representer
 
-from lmnet import environment
-from lmnet.common import Tasks
-from lmnet.data_processor import Processor, Sequence
+from lmnet.lmnet import environment
+from lmnet.lmnet.common import Tasks
+from lmnet.lmnet.data_processor import Processor, Sequence
 
 PARAMS_FOR_EXPORT = [
     "DATA_FORMAT",

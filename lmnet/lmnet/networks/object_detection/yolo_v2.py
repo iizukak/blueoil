@@ -18,10 +18,10 @@ import math
 import numpy as np
 import tensorflow as tf
 
-from lmnet.blocks import darknet as darknet_block
-from lmnet.layers import conv2d, max_pooling2d
-from lmnet.metrics.mean_average_precision import average_precision, tp_fp_in_the_image
-from lmnet.networks.base import BaseNetwork
+from lmnet.lmnet.blocks import darknet as darknet_block
+from lmnet.lmnet.layers import conv2d, max_pooling2d
+from lmnet.lmnet.metrics.mean_average_precision import average_precision, tp_fp_in_the_image
+from lmnet.lmnet.networks.base import BaseNetwork
 
 
 # TODO(wakisaka): there are so many duplicates with yolo_v1.py .
@@ -550,7 +550,7 @@ class YoloV2(BaseNetwork):
                 predict_boxes[:, :, :, :, 1],
                 predict_boxes[:, :, :, :, 2],
                 predict_boxes[:, :, :, :, 3],
-                tf.fill(predict_score.shape, float(class_id)),
+                tf.fill(predict_sdlk.python.dlk.coreshape, float(class_id)),
                 predict_score,
             ], axis=4)
 
@@ -570,7 +570,7 @@ class YoloV2(BaseNetwork):
         Args:
             formatted_output: Formatted predict_boxes Tensor.
                 The Shape is [batch_size, num_predicted_boxes, 6(x, y, w, h, class_id, score)].
-            threshold: low threshold of predict score.
+            threshold: low threshold of predict sdlk.python.dlk.core
 
         Returns:
             python list of predict_boxes Tensor.

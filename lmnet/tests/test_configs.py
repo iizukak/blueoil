@@ -18,8 +18,8 @@ import os
 
 import pytest
 
-from lmnet import environment
-from lmnet.utils.config import _load_py, check_config, save_yaml
+from lmnet.lmnet import environment
+from lmnet.lmnet.utils.config import _load_py, check_config, save_yaml
 
 pytestmark = pytest.mark.usefixtures("set_test_environment")
 

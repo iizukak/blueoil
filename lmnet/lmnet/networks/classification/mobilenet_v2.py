@@ -17,7 +17,7 @@ import functools
 
 import tensorflow as tf
 
-from lmnet.networks.classification.base import Base
+from lmnet.lmnet.networks.classification.base import Base
 
 
 class MobileNetV2(Base):

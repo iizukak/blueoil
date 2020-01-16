@@ -22,13 +22,13 @@ from abc import abstractmethod
 from itertools import dropwhile
 from typing import TYPE_CHECKING, Any, Dict, Optional, cast
 
-from core.view import View
-from utils import classproperty
+from dlk.python.dlk.core.view import View
+from dlk.python.dlk.utils import classproperty
 
 from .data_types import *
 
 if TYPE_CHECKING:
-    import core.operators as ops
+    import dlk.python.dlk.core.operators as ops
 
 Ops = Dict[str, 'Operator']
 OutOps = Dict[str, List['Operator']]

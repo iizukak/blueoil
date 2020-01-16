@@ -16,7 +16,7 @@
 """Base IO module."""
 from abc import ABCMeta, abstractmethod
 
-from core.graph import Graph
+from dlk.python.dlk.core.graph import Graph
 
 
 class BaseIO(metaclass=ABCMeta):

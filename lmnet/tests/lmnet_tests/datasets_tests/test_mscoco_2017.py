@@ -16,10 +16,10 @@
 import numpy as np
 import pytest
 
-from lmnet.pre_processor import ResizeWithJoints, JointsToGaussianHeatmap
-from lmnet.datasets.mscoco_2017 import MscocoSinglePersonKeypoints
-from lmnet.datasets.dataset_iterator import DatasetIterator
-from lmnet.data_processor import Sequence
+from lmnet.lmnet.pre_processor import ResizeWithJoints, JointsToGaussianHeatmap
+from lmnet.lmnet.datasets.mscoco_2017 import MscocoSinglePersonKeypoints
+from lmnet.lmnet.datasets.dataset_iterator import DatasetIterator
+from lmnet.lmnet.data_processor import Sequence
 
 
 # Apply set_test_environment() in conftest.py to all tests in this file.

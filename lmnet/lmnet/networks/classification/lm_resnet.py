@@ -17,8 +17,8 @@ import functools
 
 import tensorflow as tf
 
-from lmnet.layers import fully_connected
-from lmnet.networks.classification.base import Base
+from lmnet.lmnet.layers import fully_connected
+from lmnet.lmnet.networks.classification.base import Base
 
 
 class LmResnet(Base):

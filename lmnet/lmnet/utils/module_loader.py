@@ -98,7 +98,7 @@ def load_network_class(name):
         name (str):  Name of network
 
     Returns:
-        lmnet.networks.Base: network class object
+        lmnet.lmnet.networks.Base: network class object
 
     """
 
@@ -115,7 +115,7 @@ def load_dataset_class(name):
         name (str): Name of dataset
 
     Returns:
-        lmnet.datasets.Base: dataset class object
+        lmnet.lmnet.datasets.Base: dataset class object
 
     """
     base_dir = os.path.join("lmnet", "datasets")

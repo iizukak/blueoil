@@ -15,15 +15,15 @@
 # =============================================================================
 from easydict import EasyDict
 
-from lmnet.common import Tasks
-from lmnet.networks.object_detection.yolo_v2 import YoloV2
-from lmnet.datasets.pascalvoc_2007 import Pascalvoc2007
-from lmnet.data_processor import Sequence
-from lmnet.pre_processor import (
+from lmnet.lmnet.common import Tasks
+from lmnet.lmnet.networks.object_detection.yolo_v2 import YoloV2
+from lmnet.lmnet.datasets.pascalvoc_2007 import Pascalvoc2007
+from lmnet.lmnet.data_processor import Sequence
+from lmnet.lmnet.pre_processor import (
     ResizeWithGtBoxes,
     DivideBy255,
 )
-from lmnet.post_processor import (
+from lmnet.lmnet.post_processor import (
     FormatYoloV2,
     ExcludeLowScoreBox,
     NMS,

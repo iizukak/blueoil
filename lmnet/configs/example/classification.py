@@ -16,22 +16,22 @@
 from easydict import EasyDict
 import tensorflow as tf
 
-from lmnet.common import Tasks
-from lmnet.datasets.cifar10 import Cifar10
-from lmnet.networks.classification.lmnet_v0 import LmnetV0Quantize
-from lmnet.data_processor import Sequence
-from lmnet.pre_processor import (
+from lmnet.lmnet.common import Tasks
+from lmnet.lmnet.datasets.cifar10 import Cifar10
+from lmnet.lmnet.networks.classification.lmnet_v0 import LmnetV0Quantize
+from lmnet.lmnet.data_processor import Sequence
+from lmnet.lmnet.pre_processor import (
     Resize,
     PerImageStandardization,
 )
-from lmnet.data_augmentor import (
+from lmnet.lmnet.data_augmentor import (
     Brightness,
     Color,
     Contrast,
     FlipLeftRight,
     Hue,
 )
-from lmnet.quantizations import (
+from lmnet.lmnet.quantizations import (
     binary_mean_scaling_quantizer,
     linear_mid_tread_half_quantizer,
 )

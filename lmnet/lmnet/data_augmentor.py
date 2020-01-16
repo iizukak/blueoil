@@ -21,8 +21,8 @@ from random import randint
 import numpy as np
 from PIL import Image, ImageEnhance, ImageFilter
 
-from lmnet import data_processor, pre_processor
-from lmnet.utils.box import fill_dummy_boxes, crop_boxes, iou
+from lmnet.lmnet import data_processor, pre_processor
+from lmnet.lmnet.utils.box import fill_dummy_boxes, crop_boxes, iou
 
 
 class Blur(data_processor.Processor):

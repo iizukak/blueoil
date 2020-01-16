@@ -15,7 +15,7 @@
 # =============================================================================
 import os
 
-from executor.predict import run as run_predict
+from lmnet.executor.predict import run as run_predict
 
 
 def predict(input, output, experiment_id, checkpoint=None, save_images=True):

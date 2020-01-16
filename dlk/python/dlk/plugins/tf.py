@@ -23,12 +23,12 @@ from typing import Any, Dict, List, Optional, Set, Tuple, Type
 import numpy as np
 from tensorflow.core.framework import types_pb2
 
-import core.operators as dlk_op
-from core.data_types import DataType, Float32, Float64, Int8, Int16, Int32, \
+import dlk.python.dlk.core.operators as dlk_op
+from dlk.python.dlk.core.data_types import DataType, Float32, Float64, Int8, Int16, Int32, \
     Int64, Uint8, Uint16, Uint32, Uint64, Bool, String
-from core.exceptions import UnsupportedNode, UnsupportedDataType
-from core.graph import Graph
-from core.operators import Operator, Conv, Identity, QTZ_binary_mean_scaling, \
+from dlk.python.dlk.core.exceptions import UnsupportedNode, UnsupportedDataType
+from dlk.python.dlk.core.graph import Graph
+from dlk.python.dlk.core.operators import Operator, Conv, Identity, QTZ_binary_mean_scaling, \
     BatchNormalization, QTZ_linear_mid_tread_half, Add, \
     MaxPool, AveragePool, Reshape, Softmax, Transpose, Relu, SpaceToDepth, \
     Mul, QTZ_binary_channel_wise_mean_scaling, ConcatOnDepth, Maximum, DepthToSpace, ResizeNearestNeighbor, \
@@ -573,7 +573,7 @@ class Importer(object):
         """
         op_type = self.convert_operator(node.op_type)
         try:
-            module = importlib.import_module('core.operators')
+            module = importlib.import_module('dlk.python.dlk.core.operators')
             class_def = getattr(module, op_type)
         except AttributeError:
             message = f'Operator {op_type} is not supported.'

@@ -17,9 +17,9 @@ from functools import partial
 
 import tensorflow as tf
 
-from lmnet.blocks import darknet as darknet_block
-from lmnet.layers import conv2d, max_pooling2d
-from lmnet.networks.classification.base import Base
+from lmnet.lmnet.blocks import darknet as darknet_block
+from lmnet.lmnet.layers import conv2d, max_pooling2d
+from lmnet.lmnet.networks.classification.base import Base
 
 
 class Darknet(Base):

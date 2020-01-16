@@ -23,10 +23,10 @@ from collections import OrderedDict
 
 import numpy as np
 
-from lmnet import data_processor
-from lmnet.datasets.base import Base, ObjectDetectionBase, StoragePathCustomizable
-from lmnet.utils.image import load_image
-from lmnet.utils.random import train_test_split
+from lmnet.lmnet import data_processor
+from lmnet.lmnet.datasets.base import Base, ObjectDetectionBase, StoragePathCustomizable
+from lmnet.lmnet.utils.image import load_image
+from lmnet.lmnet.utils.random import train_test_split
 
 
 class OpenImagesV4(Base):

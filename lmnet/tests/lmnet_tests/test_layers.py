@@ -16,8 +16,8 @@
 import numpy as np
 import tensorflow as tf
 
-from lmnet.layers import max_pool_with_argmax
-from lmnet.layers.experiment import max_unpool_with_argmax
+from lmnet.lmnet.layers import max_pool_with_argmax
+from lmnet.lmnet.layers.experiment import max_unpool_with_argmax
 
 
 def test_unpool():

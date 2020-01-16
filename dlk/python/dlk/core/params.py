@@ -16,15 +16,15 @@
 """Parameter module."""
 from typing import List
 
-from core.config import Config
-from core.data_types import *
-from core.operators import Conv
+from dlk.python.dlk.core.config import Config
+from dlk.python.dlk.core.data_types import *
+from dlk.python.dlk.core.operators import Conv
 
 
 class Params(object):
     """Parameter class."""
 
-    from core.graph import Graph
+    from dlk.python.dlk.core.graph import Graph
 
     def __init__(self, graph: Graph, config: Config) -> None:
         """Init this parameter object.

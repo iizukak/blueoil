@@ -20,15 +20,15 @@ Script that automatically runs all of the folllowing steps.
 - Generate all cpp source headers and other control files like Makefile.
 """
 import click
-import utils
+import dlk.python.dlk.utils
 from os import path
 
-from core.config import Config
-from core.graph import Graph
-from core.params import Params
-from code_generater import CodeGenerater
-from frontend import TensorFlowIO
-from core.optimizer import pass_remove_identities, pass_transpose, pass_constant_folding, \
+from dlk.python.dlk.core.config import Config
+from dlk.python.dlk.core.graph import Graph
+from dlk.python.dlk.core.params import Params
+from dlk.python.dlk.code_generater import CodeGenerater
+from dlk.python.dlk.frontend import TensorFlowIO
+from dlk.python.dlk.core.optimizer import pass_remove_identities, pass_transpose, pass_constant_folding, \
     pass_propagate_quantization_details_into_conv, pass_compute_thresholds, pass_pack_weights, \
     pass_quantize_convolutions, pass_propagate_datatypes, \
     pass_propagate_format, pass_propagate_output_type_backward, \

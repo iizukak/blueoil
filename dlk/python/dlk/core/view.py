@@ -16,7 +16,7 @@
 import copy
 from textwrap import dedent, indent
 
-from core.data_types import *
+from dlk.python.dlk.core.data_types import *
 
 
 class View(object):

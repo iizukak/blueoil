@@ -16,7 +16,7 @@
 import pytest
 import tensorflow as tf
 
-from lmnet import environment
+from lmnet.lmnet import environment
 
 
 @pytest.fixture

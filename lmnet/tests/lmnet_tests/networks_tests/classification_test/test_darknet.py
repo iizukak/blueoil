@@ -17,13 +17,13 @@ import pytest
 import tensorflow as tf
 from easydict import EasyDict
 
-from executor.train import start_training
-from lmnet import environment
-from lmnet.common import Tasks
-from lmnet.datasets.image_folder import ImageFolderBase
-from lmnet.networks.classification.darknet import Darknet
-from lmnet.pre_processor import Resize
-from lmnet.utils.executor import prepare_dirs
+from lmnet.executor.train import start_training
+from lmnet.lmnet import environment
+from lmnet.lmnet.common import Tasks
+from lmnet.lmnet.datasets.image_folder import ImageFolderBase
+from lmnet.lmnet.networks.classification.darknet import Darknet
+from lmnet.lmnet.pre_processor import Resize
+from lmnet.lmnet.utils.executor import prepare_dirs
 
 # Apply reset_default_graph() in conftest.py to all tests in this file.
 # Set test environment

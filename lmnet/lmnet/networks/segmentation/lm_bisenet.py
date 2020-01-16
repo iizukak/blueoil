@@ -17,8 +17,8 @@ import functools
 
 import tensorflow as tf
 
-from lmnet.blocks import conv_bn_act, densenet_group
-from lmnet.networks.segmentation.base import Base
+from lmnet.lmnet.blocks import conv_bn_act, densenet_group
+from lmnet.lmnet.networks.segmentation.base import Base
 
 
 class LMBiSeNet(Base):
@@ -363,9 +363,9 @@ class LMBiSeNetQuantize(LMBiSeNet):
        ``weight_quantizer``, ``weight_quantizer_kwargs``.
 
     Args:
-        activation_quantizer (callable): Weight quantizer. See more at `lmnet.quantizations`.
+        activation_quantizer (callable): Weight quantizer. See more at `lmnet.lmnet.quantizations`.
         activation_quantizer_kwargs (dict): Kwargs for `activation_quantizer`.
-        weight_quantizer (callable): Activation quantizer. See more at `lmnet.quantizations`.
+        weight_quantizer (callable): Activation quantizer. See more at `lmnet.lmnet.quantizations`.
         weight_quantizer_kwargs (dict): Kwargs for `weight_quantizer`.
     """
 

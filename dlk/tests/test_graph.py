@@ -18,9 +18,9 @@ import unittest
 
 import numpy as np
 
-from core.data_types import Float32
-from core.graph import Graph
-from core.operators import Constant, Conv, Input, Output
+from dlk.python.dlk.core.data_types import Float32
+from dlk.python.dlk.core.graph import Graph
+from dlk.python.dlk.core.operators import Constant, Conv, Input, Output
 
 
 class TestGraph(unittest.TestCase):

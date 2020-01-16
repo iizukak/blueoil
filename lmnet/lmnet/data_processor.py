@@ -53,8 +53,8 @@ class Sequence:
         """
 
         # Avoid circular import
-        from lmnet.pre_processor import Resize, ResizeWithGtBoxes, ResizeWithMask, LetterBoxes
-        from lmnet.post_processor import FormatYoloV2
+        from lmnet.lmnet.pre_processor import Resize, ResizeWithGtBoxes, ResizeWithMask, LetterBoxes
+        from lmnet.lmnet.post_processor import FormatYoloV2
 
         for process in self.processors:
             class_list = (Resize, ResizeWithGtBoxes, ResizeWithMask, LetterBoxes)

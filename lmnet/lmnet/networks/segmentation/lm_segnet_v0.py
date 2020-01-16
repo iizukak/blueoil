@@ -18,9 +18,9 @@ import functools
 import tensorflow as tf
 from tensorflow.python.framework import ops
 
-from lmnet.blocks import lmnet_block
-from lmnet.layers.experiment import max_unpool_with_argmax
-from lmnet.networks.segmentation.base import SegnetBase
+from lmnet.lmnet.blocks import lmnet_block
+from lmnet.lmnet.layers.experiment import max_unpool_with_argmax
+from lmnet.lmnet.networks.segmentation.base import SegnetBase
 
 
 class LmSegnetV0(SegnetBase):
@@ -109,9 +109,9 @@ class LmSegnetV0Quantize(LmSegnetV0):
     ``weight_quantizer``, ``weight_quantizer_kwargs``.
 
     Args:
-        activation_quantizer (callable): Weight quantizater. See more at `lmnet.quantizations`.
+        activation_quantizer (callable): Weight quantizater. See more at `lmnet.lmnet.quantizations`.
         activation_quantizer_kwargs (dict): Kwargs for `activation_quantizer`.
-        weight_quantizer (callable): Activation quantizater. See more at `lmnet.quantizations`.
+        weight_quantizer (callable): Activation quantizater. See more at `lmnet.lmnet.quantizations`.
         weight_quantizer_kwargs (dict): Kwargs for `weight_quantizer`.
     """
 

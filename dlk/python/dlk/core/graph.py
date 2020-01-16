@@ -17,8 +17,8 @@
 from collections import OrderedDict, defaultdict
 from typing import TYPE_CHECKING, Any, Dict, List, Optional, Set, cast
 
-from core.graph_pattern_matching import sort_graph
-from core.operators import Conv, Operator
+from dlk.python.dlk.core.graph_pattern_matching import sort_graph
+from dlk.python.dlk.core.operators import Conv, Operator
 
 
 class Graph(object):

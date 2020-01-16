@@ -16,14 +16,14 @@
 from easydict import EasyDict
 import tensorflow as tf
 
-from lmnet.common import Tasks
-from lmnet.networks.segmentation.lm_segnet import LmSegnet
-from lmnet.datasets.camvid import Camvid
-from lmnet.data_processor import Sequence
-from lmnet.pre_processor import (
+from lmnet.lmnet.common import Tasks
+from lmnet.lmnet.networks.segmentation.lm_segnet import LmSegnet
+from lmnet.lmnet.datasets.camvid import Camvid
+from lmnet.lmnet.data_processor import Sequence
+from lmnet.lmnet.pre_processor import (
     PerImageStandardization,
 )
-from lmnet.data_augmentor import (
+from lmnet.lmnet.data_augmentor import (
     Brightness,
     Color,
     Contrast,

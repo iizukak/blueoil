@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # =============================================================================
-from lmnet.datasets.image_folder import ImageFolderBase
+from lmnet.lmnet.datasets.image_folder import ImageFolderBase
 
 
 # TODO(wakisaka): load from binaly file.

@@ -17,8 +17,8 @@ import functools
 
 import tensorflow as tf
 
-from lmnet.blocks import lmnet_block
-from lmnet.networks.keypoint_detection.base import Base
+from lmnet.lmnet.blocks import lmnet_block
+from lmnet.lmnet.networks.keypoint_detection.base import Base
 
 
 class LmSinglePoseV1(Base):
@@ -144,9 +144,9 @@ class LmSinglePoseV1Quantize(LmSinglePoseV1):
     ``weight_quantizer``, ``weight_quantizer_kwargs``.
 
     Args:
-        activation_quantizer (callable): Weight quantizater. See more at `lmnet.quantizations`.
+        activation_quantizer (callable): Weight quantizater. See more at `lmnet.lmnet.quantizations`.
         activation_quantizer_kwargs (dict): Kwargs for `activation_quantizer`.
-        weight_quantizer (callable): Activation quantizater. See more at `lmnet.quantizations`.
+        weight_quantizer (callable): Activation quantizater. See more at `lmnet.lmnet.quantizations`.
         weight_quantizer_kwargs (dict): Kwargs for `weight_quantizer`.
 
     """

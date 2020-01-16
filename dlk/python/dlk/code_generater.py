@@ -19,11 +19,11 @@ from os import path
 from pathlib import Path
 from typing import cast
 
-import utils
-from core.config import Config
-from core.graph import Graph
-from core.operators import Conv
-from template import Template
+import dlk.python.dlk.utils
+from dlk.python.dlk.core.config import Config
+from dlk.python.dlk.core.graph import Graph
+from dlk.python.dlk.core.operators import Conv
+from dlk.python.dlk.template import Template
 
 
 class CodeGenerater(object):

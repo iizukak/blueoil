@@ -17,9 +17,9 @@ from __future__ import division
 
 import numpy as np
 
-from lmnet.data_augmentor import iou
-from lmnet.data_processor import Processor
-from lmnet.utils.box import format_cxcywh_to_xywh
+from lmnet.lmnet.data_augmentor import iou
+from lmnet.lmnet.data_processor import Processor
+from lmnet.lmnet.utils.box import format_cxcywh_to_xywh
 
 
 def _softmax(x):
@@ -198,7 +198,7 @@ class FormatYoloV2(Processor):
                 predict_boxes[:, :, :, :, 1],
                 predict_boxes[:, :, :, :, 2],
                 predict_boxes[:, :, :, :, 3],
-                np.full(predict_score.shape, class_id),
+                np.full(predict_sdlk.python.dlk.coreshape, class_id),
                 predict_score,
             ], axis=4)
 

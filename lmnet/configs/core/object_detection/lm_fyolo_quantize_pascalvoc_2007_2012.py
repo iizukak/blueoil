@@ -16,22 +16,22 @@
 from easydict import EasyDict
 import tensorflow as tf
 
-from lmnet.common import Tasks
-from lmnet.networks.object_detection.lm_fyolo import LMFYoloQuantize
+from lmnet.lmnet.common import Tasks
+from lmnet.lmnet.networks.object_detection.lm_fyolo import LMFYoloQuantize
 
 
-from lmnet.datasets.pascalvoc_2007_2012 import Pascalvoc20072012
-from lmnet.data_processor import Sequence
-from lmnet.pre_processor import (
+from lmnet.lmnet.datasets.pascalvoc_2007_2012 import Pascalvoc20072012
+from lmnet.lmnet.data_processor import Sequence
+from lmnet.lmnet.pre_processor import (
     ResizeWithGtBoxes,
     DivideBy255,
 )
-from lmnet.post_processor import (
+from lmnet.lmnet.post_processor import (
     FormatYoloV2,
     ExcludeLowScoreBox,
     NMS,
 )
-from lmnet.data_augmentor import (
+from lmnet.lmnet.data_augmentor import (
     Brightness,
     Color,
     Contrast,
@@ -40,7 +40,7 @@ from lmnet.data_augmentor import (
     SSDRandomCrop,
 )
 
-from lmnet.quantizations import (
+from lmnet.lmnet.quantizations import (
     binary_channel_wise_mean_scaling_quantizer,
     linear_mid_tread_half_quantizer,
 )

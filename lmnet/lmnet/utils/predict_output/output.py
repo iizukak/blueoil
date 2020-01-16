@@ -23,8 +23,8 @@ import numpy as np
 import PIL.Image
 import PIL.ImageDraw
 
-from lmnet.common import Tasks, get_color_map
-from lmnet.visualize import visualize_keypoint_detection
+from lmnet.lmnet.common import Tasks, get_color_map
+from lmnet.lmnet.visualize import visualize_keypoint_detection
 
 
 class JsonOutput():

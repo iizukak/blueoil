@@ -17,8 +17,8 @@ import os
 import shutil
 import subprocess
 
-from executor.export import run as run_export
-from scripts.generate_project import run as run_generate_project
+from lmnet.executor.export import run as run_export
+from dlk.python.dlk.scripts.generate_project import run as run_generate_project
 
 
 def create_output_directory(output_root_dir, output_template_dir=None):

@@ -17,10 +17,10 @@ import functools
 
 import numpy as np
 
-from lmnet.utils.image import load_image
-from lmnet.datasets.base import ObjectDetectionBase
-from lmnet.datasets.pascalvoc_2007 import Pascalvoc2007
-from lmnet.datasets.pascalvoc_2012 import Pascalvoc2012
+from lmnet.lmnet.utils.image import load_image
+from lmnet.lmnet.datasets.base import ObjectDetectionBase
+from lmnet.lmnet.datasets.pascalvoc_2007 import Pascalvoc2007
+from lmnet.lmnet.datasets.pascalvoc_2012 import Pascalvoc2012
 
 
 class Pascalvoc20072012(ObjectDetectionBase):

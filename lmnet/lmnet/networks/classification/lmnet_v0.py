@@ -17,8 +17,8 @@ import functools
 
 import tensorflow as tf
 
-from lmnet.blocks import lmnet_block
-from lmnet.networks.classification.base import Base
+from lmnet.lmnet.blocks import lmnet_block
+from lmnet.lmnet.networks.classification.base import Base
 
 
 class LmnetV0(Base):
@@ -112,9 +112,9 @@ class LmnetV0Quantize(LmnetV0):
     ``weight_quantizer``, ``weight_quantizer_kwargs``.
 
     Args:
-        activation_quantizer (callable): Weight quantizater. See more at `lmnet.quantizations`.
+        activation_quantizer (callable): Weight quantizater. See more at `lmnet.lmnet.quantizations`.
         activation_quantizer_kwargs (dict): Kwargs for `activation_quantizer`.
-        weight_quantizer (callable): Activation quantizater. See more at `lmnet.quantizations`.
+        weight_quantizer (callable): Activation quantizater. See more at `lmnet.lmnet.quantizations`.
         weight_quantizer_kwargs (dict): Kwargs for `weight_quantizer`.
     """
     version = 1.0

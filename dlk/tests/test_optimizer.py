@@ -15,12 +15,12 @@
 # =============================================================================
 """Test file for Optimizer."""
 import unittest
-from core.data_types import Float32, PackedUint32, Int32, QUANTIZED_PACKED
-from core.optimizer import pass_remove_identities, pass_transpose, pass_constant_folding, \
+from dlk.python.dlk.core.data_types import Float32, PackedUint32, Int32, QUANTIZED_PACKED
+from dlk.python.dlk.core.optimizer import pass_remove_identities, pass_transpose, pass_constant_folding, \
     pass_propagate_quantization_details_into_conv, pass_compute_thresholds, pass_pack_weights, \
     pass_quantize_convolutions, pass_propagate_datatypes, pass_propagate_output_type_backward
-from core.graph import Graph
-from core.operators import Add, AveragePool, BatchNormalization, Constant, Conv, Identity, Input, \
+from dlk.python.dlk.core.graph import Graph
+from dlk.python.dlk.core.operators import Add, AveragePool, BatchNormalization, Constant, Conv, Identity, Input, \
     MaxPool, Operator, Output, Transpose, QTZ_binary_mean_scaling, QTZ_linear_mid_tread_half, Reshape, Softmax, \
     SpaceToDepth
 
