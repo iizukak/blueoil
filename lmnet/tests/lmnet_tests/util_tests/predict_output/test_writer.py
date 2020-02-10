@@ -6,10 +6,10 @@ import pytest
 from PIL import Image
 
 from lmnet.common import Tasks
-from lmnet.utils.predict_output.writer import OutputWriter
-from lmnet.utils.predict_output.writer import save_json
-from lmnet.utils.predict_output.writer import save_npy
-from lmnet.utils.predict_output.writer import save_materials
+from blueoil.nn.utils.predict_output.writer import OutputWriter
+from blueoil.nn.utils.predict_output.writer import save_json
+from blueoil.nn.utils.predict_output.writer import save_npy
+from blueoil.nn.utils.predict_output.writer import save_materials
 
 
 def test_write(temp_dir):

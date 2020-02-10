@@ -29,12 +29,12 @@ from SocketServer import ThreadingMixIn
 import click
 
 from lmnet.nnlib import NNLib
-from lmnet.utils.config import (
+from blueoil.nn.utils.config import (
     load_yaml,
     build_pre_process,
     build_post_process,
 )
-from lmnet.utils.demo import (
+from blueoil.nn.utils.demo import (
     VideoStream,
     run_inference,
 )

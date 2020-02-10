@@ -26,10 +26,10 @@ from lmnet.common import Tasks
 from lmnet.datasets.base import ObjectDetectionBase
 from lmnet.datasets.dataset_iterator import DatasetIterator
 from lmnet.datasets.tfds import TFDSClassification, TFDSObjectDetection
-from lmnet.utils import config as config_util
-from lmnet.utils import executor
-from lmnet.utils import horovod as horovod_util
-from lmnet.utils import module_loader
+from blueoil.nn.utils import config as config_util
+from blueoil.nn.utils import executor
+from blueoil.nn.utils import horovod as horovod_util
+from blueoil.nn.utils import module_loader
 
 
 def _save_checkpoint(saver, sess, global_step, step):

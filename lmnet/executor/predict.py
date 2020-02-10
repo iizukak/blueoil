@@ -23,10 +23,10 @@ import numpy as np
 import tensorflow as tf
 
 from lmnet import environment
-from lmnet.utils.image import load_image
-from lmnet.utils import config as config_util
-from lmnet.utils.executor import search_restore_filename
-from lmnet.utils.predict_output.writer import OutputWriter
+from blueoil.nn.utils.image import load_image
+from blueoil.nn.utils import config as config_util
+from blueoil.nn.utils.executor import search_restore_filename
+from blueoil.nn.utils.predict_output.writer import OutputWriter
 
 DUMMY_FILENAME = "DUMMY_FILE"
 

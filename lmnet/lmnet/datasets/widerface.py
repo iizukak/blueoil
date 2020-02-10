@@ -18,7 +18,7 @@ import os
 
 import numpy as np
 
-from lmnet.utils.image import load_image
+from blueoil.nn.utils.image import load_image
 from lmnet.datasets.base import ObjectDetectionBase
 
 

@@ -22,10 +22,10 @@ import time
 
 from lmnet.nnlib import NNLib as NNLib
 
-from lmnet.utils.image import load_image
+from blueoil.nn.utils.image import load_image
 from lmnet.common import Tasks
-from lmnet.utils.output import JsonOutput, ImageFromJson
-from lmnet.utils.config import (
+from blueoil.nn.utils.output import JsonOutput, ImageFromJson
+from blueoil.nn.utils.config import (
     load_yaml,
     build_pre_process,
     build_post_process,
